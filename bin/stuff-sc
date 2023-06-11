@@ -1,0 +1,14 @@
+#!/usr/bin/env bash
+
+layouts=("$XDG_CONFIG_HOME/layouts"/*.sh)
+layouts=("${layouts[@]##*/}") # Remove directory path
+layouts=("${layouts[@]%.sh}") # Remove file extension
+layout=$(fd --base-directory="$XDG_CONFIG_HOME/layouts" "$1")
+if [[ $(echo "$layout" | wc -l) -ne 1 ]]; then
+    layout=$(printf '%s\n' "${layouts[@]}" | rofi -dmenu -p "Layout: " -i -select -filter "$1")
+    if [[ -f "$XDG_CONFIG_HOME/layouts/$layout.sh" ]]; then
+        . "$XDG_CONFIG_HOME/layouts/$layout.sh"
+    fi
+else
+    . "$XDG_CONFIG_HOME/layouts/$layout"
+fi

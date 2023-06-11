@@ -1,0 +1,39 @@
+[language-server.pyright]
+command = "stuff-pyright"
+args = ["--stdio"]
+config = {}
+
+[language-server.pylsp]
+command = "stuff-pylsp"
+config = {}
+
+[language-server.glimmer]
+command = "glint-language-server"
+
+[language-server.eslint]
+command = "eslint-language-server"
+# args = ["--stdio"]
+# config = {}
+
+[[language]]
+name = "python"
+roots = ["pyproject.toml"]
+# use pylsp for goto-defenition etc. as pyright seems to be broken
+language-servers = [ { name = "pylsp", only-features = ["goto-definition", "goto-declaration", "goto-reference", "goto-implementation", "completion"] }, "pyright"]
+indent = { tab-width = 4, unit = "    " }
+
+[[language]]
+name = "handlebars"
+roots = ["package.json"]
+file-types = ["hbs"]
+grammar = "glimmer"
+scope = "source.glimmer"
+language-servers = [ { name = "glimmer" } ]
+
+[[grammar]]
+name = "glimmer"
+source = { git = "https://github.com/alexlafroscia/tree-sitter-glimmer", rev = "d3031a8294bf331600d5046b1d14e690a0d8ba0c"}
+
+[[language]]
+name = "javascript"
+language-servers = [ {name = "eslint"}, {name="typescript-language-server"} ]

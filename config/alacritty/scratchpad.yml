@@ -1,0 +1,38 @@
+import:
+  - $XDG_CONFIG_HOME/alacritty/alacritty.yml
+# colors:
+#   # Default colors
+#   primary:
+#     background: '#2E3440' 
+#     foreground: '#D8DEE9'
+
+#   # Normal colors
+#   normal:
+#     black: '#1D202F'
+#     red: '#BF616A'
+#     green: '#9ECE6A'
+#     yellow: '#EBCB8B'
+#     blue: '#7AA2F7'
+#     magenta: '#BB9AF7'
+#     cyan: '#7DCFFF'
+#     white: '#A9B1D6'
+
+#   indexed_colors:
+#     - { index: 16, color: '0xff9e64' }
+#     - { index: 17, color: '0xdb4b4b' }
+
+# Font configuration
+draw_bold_text_with_bright_colors: false
+font:
+  normal:
+    family: Droid Sans Mono
+
+  size: 11.0
+
+window:
+  decorations: full
+  padding:
+    x: 14
+    y: 14
+  title: Terminal
+  opacity: 1

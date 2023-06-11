@@ -1,0 +1,21 @@
+#compdef stuff-sc
+
+_stuff-sc() {
+  local -a layouts
+  local cur context state line
+
+  _arguments -C \
+    '*:layouts:->layouts'
+
+  case $state in
+    (layouts)
+      layouts=($XDG_CONFIG_HOME/layouts/*.sh)
+      layouts=("${layouts[@]##*/}") # Remove directory path
+      layouts=("${layouts[@]%.sh}") # Remove file extension
+      cur="${COMP_WORDS[COMP_CWORD]}"
+      _describe -t layouts "layout" layouts
+      ;;
+  esac
+}
+
+compdef _stuff-sc stuff-sc

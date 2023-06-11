@@ -1,0 +1,56 @@
+inherits = "tokyonight_storm"
+
+# Style code
+"comment" = { fg = "comment", modifiers = ["italic"] }
+"constant" = { fg = "orange" }
+"constant.character.escape" = { fg = "magenta" }
+"function" = { fg = "yellow", modifiers = ["italic"] }
+"function.macro" = { fg = "cyan" }
+"function.method" = { fg = "yellow" }
+"function.attribute" = { bg = "red" }
+"keyword" = { fg = "cyan", modifiers = ["italic"] }
+"keyword.control" = { fg = "magenta" }
+"keyword.control.import" = { fg = "cyan" }
+"keyword.operator" = { fg = "turquoise" }
+"keyword.function" = { fg = "magenta", modifiers = ["italic"] }
+"operator" = { fg = "turquoise" }
+"punctuation" = { fg = "turquoise" }
+"string" = { fg = "orange" }
+"string.regexp" = { fg = "light-blue" }
+"tag" = { fg = "blue" }
+"tag.error" = { fg = "red" }
+"type" = { fg = "green" }
+"namespace" = { fg = "blue" }
+"variable" = { fg = "cyan" }
+"variable.builtin" = { fg = "red" }
+"variable.other.member" = { fg = "green" }
+"constructor" = { fg = "green" }
+"variable.parameter" = { fg = "yellow", modifiers = ["italic"] }
+
+# glimmer
+"html.punctuation.bracket" = { fg = "light-gray" }
+"handlebars.braces" = { fg = "magenta" }
+"attribute" = { fg = "cyan" }
+
+# Style UI 
+"ui.background" = {}
+"ui.text" = { fg = "background_menu" }
+"ui.linenr" = { fg = "background_menu" }
+"ui.popup" = { fg = "background_menu" }
+"ui.linenr.selected" = { fg = "background_menu", modifiers = ["bold"] }
+"ui.bufferline.active" = { fg = "foreground_gutter", bg = "background_menu", modifiers = [
+  "reversed",
+] }
+"ui.bufferline.inactive" = { fg = "foreground_gutter", bg = "background_menu" }
+"ui.menu.selected" = { fg = "foreground", modifiers = ["bold"] }
+
+[palette]
+foreground_gutter = "#597375"
+foreground = "#29464a"
+background_menu = "#ffffff"
+background_highlight = "#4e8386"
+light-gray = "#808080"
+yellow = "#ffd700"
+magenta = "#da83d6"
+comment = "#79aa66"
+component = "#4ec9b0"

@@ -1,0 +1,6 @@
+#!/bin/sh
+
+
+file_path="$HOME/juicepad/screenshots/$( date '+%y-%m-%d_%h-%m-%s' )_screenshot.png"
+import "${file_path}"
+xclip -selection clipboard -target image/png -i < "${file_path}"
