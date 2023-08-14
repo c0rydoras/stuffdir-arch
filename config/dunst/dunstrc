@@ -1,0 +1,6 @@
+[global]
+font = Droid Sans
+foreground="#fff" 
+background="#2E3440CC"
+frame_color="#D8DEE9"
+corner_radius = 10

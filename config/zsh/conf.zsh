@@ -7,11 +7,9 @@ ZSH_THEME="eastwood-time"
 export SSH_AUTH_SOCK="$XDG_RUNTIME_DIR/ssh-agent.socket"
 
 plugins=(git
-    poetry
-    docker
-    yarn
+    # poetry
     ember-cli
-    docker-compose
+    yarn
     zsh-syntax-highlighting
     # helix-mode
 )
@@ -21,6 +19,18 @@ source $ZSH/oh-my-zsh.sh
 export ZSH_HIGHLIGHT_STYLES[unknown-token]=fg=red
 
 export PATH="$HOME/.local/bin:$PATH"
+
+# pnpm
+export PNPM_HOME="$HOME/.local/share/pnpm"
+case ":$PATH:" in
+  *":$PNPM_HOME:"*) ;;
+  *) export PATH="$PNPM_HOME:$PATH" ;;
+esac
+# pnpm end
+
+# volta
+export VOLTA_HOME="$HOME/.volta"
+export PATH="$VOLTA_HOME/bin:$PATH"
 
 export EDITOR='hx'
 
@@ -69,9 +79,24 @@ alias gitrmb='git branch -D $(git branch --list | fzf -m | tr "\n" " ")'
 # general file stuff
 alias rmds='rm -rf $(ls --no-icons --only-dirs | fzf --prompt "Select directories to delete: " -m --preview "tree -C {} | head -200 " | tr "\n" " ")'
 
-# alias the juice utils
+# alias the binaries
 alias sc='stuff-sc'
 alias pr='. stuff-pr'
+
+# clear
+alias clear='clear -x'
+alias ql='clear'
+
+# docker compose
+alias dc='docker compose'
+alias dcu='docker compose up -d'
+alias dcf='docker compose logs -f'
+alias dcb='docker compose build'
+alias dcr='docker compose run'
+alias dce='docker compose exec'
+
+# docker
+alias dv='docker volume'
 
 
 function TRAPWINCH() {

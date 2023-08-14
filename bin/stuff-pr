@@ -1,4 +1,4 @@
-#!/bin/bash
+#!/usr/bin/env bash
 
 cmd="fd --base-directory=$PROJECTS_DIR -i --max-depth=1 --type=d"
 if [[ $(eval "$cmd $1" | wc -l) -ne 1 ]]; then
@@ -8,5 +8,5 @@ if [[ $(eval "$cmd $1" | wc -l) -ne 1 ]]; then
     fi
 else
     projects=$(eval "$cmd $1 --absolute-path")
-    cd "$projects" || exit 
+    cd "$projects" || exit
 fi

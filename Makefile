@@ -36,7 +36,7 @@ setup-bin:  ## Set up the binaries & their completions
 setup-directories: ## Set up directories
 	@mkdir -p ~/.programms ~/dev/projects ~/dev/packages ~/juicepad/.bloat && mkdir /etc/wallpapers && \
 	cd ~/juicepad && mkdir documents downloads notes onedrive postman screenshots && \
-	cd .bloat && mkdir desktop music pictures public templates videos && cd
+	cd .bloat && mkdir desktop music pictures public templates videos
 
 .PHONY: setup-xdg-dirs
 setup-xdg-dirs: ## Update xdg-user-dirs
@@ -44,7 +44,7 @@ setup-xdg-dirs: ## Update xdg-user-dirs
 
 .PHONY: setup-yay
 setup-yay: ## Install yay
-	@git clone https://aur.archlinux.org/yay.git _yay042374 && cd yay && makepkg -si && cd .. && rm -rf _yay042374 && \
+	@git clone https://aur.archlinux.org/yay.git yay && cd yay && makepkg -si && cd .. && rm -rf yay
 	
 .PHONY: setup-core-packages
 setup-core-packages: ## Install core packages
