@@ -34,6 +34,7 @@ systemctl restart sddm
 
 - Wallpaper by [Daniel Leone](https://unsplash.com/photos/g30P1zcOzXo), licensed under the [Unsplash License](https://unsplash.com/license)
 - I haven't fully tested the install target in the makefile yet
+- The `stuff-pr` binray was moved to its own [repo](https://github.com/C0rydoras/prx)
 
 ## License
 

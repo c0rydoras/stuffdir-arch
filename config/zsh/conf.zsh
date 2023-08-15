@@ -81,7 +81,7 @@ alias rmds='rm -rf $(ls --no-icons --only-dirs | fzf --prompt "Select directorie
 
 # alias the binaries
 alias sc='stuff-sc'
-alias pr='. stuff-pr'
+alias pr='. prx' # stuff-pr has its own repo now: https://github.com/C0rydoras/prx
 
 # clear
 alias clear='clear -x'
