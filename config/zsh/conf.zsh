@@ -98,7 +98,7 @@ alias dce='docker compose exec'
 # docker
 alias dv='docker volume'
 
-
 function TRAPWINCH() {
   zle && { zle reset-prompt; zle -R }
 }
+

@@ -12,6 +12,9 @@ command = "ember-language-server"
 args = ["--stdio"]
 config = {}
 
+[language-server.pkgbuild]
+command = "pkgbuild-language-server"
+
 [language-server.tailwindcss]
 command = "tailwindcss-language-server"
 args = ["--stdio"]
@@ -86,3 +89,11 @@ grammar = "typescript"
 name = "css"
 formatter = { command = "prettier", args = ["--parser", "css"] }
 auto-format = true
+
+[[language]]
+name = "pkgbuild"
+scope = "source.pkgbuild"
+roots = []
+file-types = ["PKGBUILD"]
+language-servers = ["pkgbuild"]
+grammar = "bash"
