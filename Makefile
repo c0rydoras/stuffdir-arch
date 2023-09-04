@@ -48,7 +48,7 @@ setup-yay: ## Install yay
 	
 .PHONY: setup-core-packages
 setup-core-packages: ## Install core packages
-	yay -Sy  curl fd exa ripgrep qtile alacritty firefox xdg-user-dirs rofi fzf imagemagick mlocate neofetch neovim python-dbus-next python-psutil python-pyxdg slock sddm ranger ttf-droid ttf-font-awesome udiskie udisks2 ueberzug rofi-themes-collection helix-git bolt gnome-keyring nm-applet networkmanager intel-ucode htop wget curl --noconfirm --needed && \
+	yay -Sy  curl fd exa ripgrep qtile alacritty firefox xdg-user-dirs rofi fzf imagemagick mlocate neofetch neovim python-dbus-next python-psutil python-pyxdg slock sddm ranger ttf-droid ttf-font-awesome udiskie udisks2 ueberzug rofi-themes-collection helix-git bolt gnome-keyring network-manager-applet networkmanager intel-ucode htop wget curl --noconfirm --needed && \
 	updatedb 
 
 .PHONY: setup-wallpapers

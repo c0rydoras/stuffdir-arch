@@ -10,5 +10,5 @@ if [[ $(echo "$layout" | wc -l) -ne 1 ]]; then
         . "$XDG_CONFIG_HOME/layouts/$layout.sh"
     fi
 else
-    . "$XDG_CONFIG_HOME/layouts/$layout"
+    test -f "$XDG_CONFIG_HOME/layouts/$layout" && . "$XDG_CONFIG_HOME/layouts/$layout"
 fi

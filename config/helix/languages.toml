@@ -97,3 +97,8 @@ roots = []
 file-types = ["PKGBUILD"]
 language-servers = ["pkgbuild"]
 grammar = "bash"
+
+[[language]]
+name = "html"
+language-servers = ["vscode-html-language-server", "emmet"]
+auto-format = false

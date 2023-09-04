@@ -12,10 +12,8 @@ import subprocess
 
 # General stuff
 BORDER_WIDTH = 0
+# BORDER_WIDTH = 5
 GAPS = 5
-
-# Border
-BORDER_HEIGHT = 45
 
 mod = "mod4"
 
@@ -31,7 +29,13 @@ NORD = {
     "nord8": "#88C0D0",
     "nord9": "#81A1C1",
     "nord10": "#5E81AC",
+    "nord11": "#bf616a",
+    "nord12": "#d08770",
+    "nord13": "#ebcb8b",
+    "nord14": "#a3be8c"
 }
+
+BORDER_COLOR=(NORD["nord8"], NORD["nord9"])
 
 keys = [
     Key([mod], "h", lazy.layout.left()),
@@ -39,14 +43,14 @@ keys = [
     Key([mod], "j", lazy.layout.down()),
     Key([mod], "k", lazy.layout.up()),
     Key([mod], "space", lazy.layout.next()),
-    Key([mod, "shift"], "h", lazy.layout.shuffle_left()),
-    Key([mod, "shift"], "l", lazy.layout.shuffle_right()),
-    Key([mod, "shift"], "j", lazy.layout.shuffle_down()),
-    Key([mod, "shift"], "k", lazy.layout.shuffle_up()),
-    Key([mod, "control"], "h", lazy.layout.grow_left()),
-    Key([mod, "control"], "l", lazy.layout.grow_right()),
-    Key([mod, "control"], "j", lazy.layout.grow_down()),
-    Key([mod, "control"], "k", lazy.layout.grow_up()),
+    Key([mod, "control"], "h", lazy.layout.shuffle_left()),
+    Key([mod, "control"], "l", lazy.layout.shuffle_right()),
+    Key([mod, "control"], "j", lazy.layout.shuffle_down()),
+    Key([mod, "control"], "k", lazy.layout.shuffle_up()),
+    Key([mod, "shift"], "h", lazy.layout.grow_left()),
+    Key([mod, "shift"], "l", lazy.layout.grow_right()),
+    Key([mod, "shift"], "j", lazy.layout.grow_down()),
+    Key([mod, "shift"], "k", lazy.layout.grow_up()),
     Key([mod], "n", lazy.layout.normalize()),
     Key([mod], "Tab", lazy.next_layout()),
     Key([mod], "w", lazy.window.kill()),
@@ -167,6 +171,9 @@ layouts = [
     layout.Columns(
         margin=GAPS,
         border_width=BORDER_WIDTH,
+        border_focus=BORDER_COLOR,
+        border_normal=NORD["nord0"],
+        border_on_single=True,
     ),
 ]
 
@@ -176,6 +183,7 @@ widget_defaults = dict(
     padding=3,
     foreground=NORD["nord4"],
 )
+
 extension_defaults = widget_defaults.copy()
 
 CLOCK_FORMATS = {"date": "%Y-%m-%d", "time": "%H:%M:%S"}
@@ -218,6 +226,8 @@ BAR_DEFAULTS = dict(
     margin=[10, GAPS * 2, GAPS, GAPS * 2],
     background=NORD["nord0"] + "CC",
     size=45,
+    border_width=BORDER_WIDTH,
+    border_color=NORD["nord0"]
 )
 
 SCREEN_DEFAULTS = dict(
@@ -330,7 +340,8 @@ floating_layout = layout.Floating(
         Match(title="branchdialog"),  # gitk
         Match(title="pinentry"),  # GPG key password entry
     ],
-    border_width=0,
+    border_width=BORDER_WIDTH,
+    border_focus=BORDER_COLOR,
 )
 auto_fullscreen = True
 focus_on_window_activation = "smart"
@@ -345,4 +356,4 @@ def autostart():
     subprocess.call(f"{xdg_config_home}/qtile/autostart.sh")
 
 
-wmname = "Qtile"
+# wmname = "Qtile"
